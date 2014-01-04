@@ -40,4 +40,7 @@ done
 # load tmux
 if [ "$TMUX" = "" ]; then tmux; fi
 
+# activate nvm
+source ~/.nvm/nvm.sh
+
 unset config_files
