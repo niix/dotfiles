@@ -40,7 +40,7 @@ done
 # load tmux
 if [ "$TMUX" = "" ]; then tmux; fi
 
-# activate nvm
-source ~/.nvm/nvm.sh
 
 unset config_files
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
