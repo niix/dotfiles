@@ -40,7 +40,37 @@ done
 # load tmux
 if [ "$TMUX" = "" ]; then tmux; fi
 
+# Base16 Shell
+#BASE16_SCHEME="default"
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 unset config_files
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [ -f ~/.nvm/nvm.sh ]; then
+    source ~/.nvm/nvm.sh
+fi
+
+export PATH=$HOME/local/bin:$HOME/npm/bin:$PATH
+
+# virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
+# who knows?
+# export NODE_PATH=/usr/local/lib/node_modules
+# NODE_PATH=$NODE_PATH:/Users/nick/npm/lib/node_modules
+
+# maven
+PATH=$PATH:~/bin
+
+export JMETER_HOME=/usr/local/jmeter/apache-jmeter-2.9/
+export ANT_HOME=~/development/JavaLib/main/build/apache-ant-1.6.3/
+export ANT_OPTS="-Xmx512m"
+export MVN_HOME=~/development/JavaLib/main/build/apache-maven-3.0.3/
+export PATH=$ANT_HOME/bin:$MVN_HOME/bin:$PATH
+
+export ME=" -Dsrc.replace.user=/src/,/test-src/ -Dclasses.replace.user=/target/classes/,/target/test-classes/ -Dsender=nick.justice@citrix.com -Dreviewers=nick.justice@citrix.com -Dsummary=\"Test\""
+
+export MAVEN_OPTS='-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=.'
