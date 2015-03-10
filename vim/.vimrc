@@ -1,6 +1,23 @@
 set nocompatible                    " Must come first, changes other options.
 filetype off                        " File type detection off.
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-sleuth'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 syntax on                           " Syntax highlighting.
 
 set expandtab                       " Spaces intead of tabs.
@@ -12,22 +29,6 @@ set nu                              " Line numbers.
 set list                            " Display whitespace.
 set listchars=tab:▸\ ,trail:▫"      " Show trailing space and tabs.
 set visualbell                      " No beeping.
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-sleuth'
-Plugin 'chriskempson/vim-tomorrow-theme'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " Color Scheme
 set background=dark
@@ -45,7 +46,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
-" neocomplcache with <TAB> completion
+" neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
