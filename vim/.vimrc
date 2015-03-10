@@ -1,6 +1,3 @@
-" Pathogen configuration
-execute pathogen#infect()
-
 set nocompatible                    " Must come first, changes other options.
 filetype off                        " File type detection off.
 
@@ -15,6 +12,22 @@ set nu                              " Line numbers.
 set list                            " Display whitespace.
 set listchars=tab:▸\ ,trail:▫"      " Show trailing space and tabs.
 set visualbell                      " No beeping.
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-sleuth'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Color Scheme
 set background=dark
@@ -59,3 +72,4 @@ function! NumberToggle()
         set relativenumber
     endif
 endfunc
+
