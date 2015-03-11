@@ -31,6 +31,8 @@ set list                            " Display whitespace.
 set listchars=tab:▸\ ,trail:▫"      " Show trailing space and tabs.
 set visualbell                      " No beeping.
 
+set formatoptions+=r
+
 " Color Scheme
 set background=dark
 set t_Co=256
