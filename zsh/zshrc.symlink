@@ -37,4 +37,7 @@ do
   source $file
 done
 
+# load tmux
+if [ "$TMUX" = "" ]; then tmux; fi
+
 unset config_files
