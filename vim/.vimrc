@@ -34,7 +34,6 @@ set visualbell                      " No beeping.
 set formatoptions+=r
 
 " Color Scheme
-set background=dark
 set t_Co=256
 colorscheme Tomorrow-Night
 
